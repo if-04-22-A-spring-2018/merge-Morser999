@@ -45,4 +45,28 @@ void print_array(int* array, int n)
 
 void merge(int* first_array, int n_first, int* second_array, int n_second, int* merged_array)
 {
+  int i = 0;
+  int a = 0;
+  int b = 0;
+  while(i < n_first && a < n_second){
+    if(first_array[i] < second_array[a]){
+      merged_array[b] = first_array[i];
+      i++;
+    }
+    else{
+      merged_array[b] = second_array[a];
+      a++;
+    }
+    b++;
+  }
+  while(i < n_first){
+    merged_array[b] = first_array[i];
+    i++;
+    b++;
+  }
+  while(a < n_second){
+    merged_array[b] = second_array[a];
+    a++;
+    b++;
+  }
 }
